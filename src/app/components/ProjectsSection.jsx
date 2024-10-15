@@ -50,7 +50,14 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "/",
   },
-
+  {id: 6,
+  title: "VNBnode Website",
+  description: "Document Run node and Validator",
+  image: "/images/projects/6.png",
+  tag: ["All", "Web"],
+  gitUrl: "https://github.com/tinboy16/vnbnode",
+  previewUrl: "https://vnbnode.com",
+  },
 ];
 
 const ProjectsSection = () => {
