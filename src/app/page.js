@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
@@ -6,9 +8,14 @@ import ProjectsSection from "./components/ProjectsSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 import AchievementsSection from "./components/AchievementsSection";
-import StarsCanvas from "./components/StarsCanvas"; 
+import dynamic from "next/dynamic";
 
-export default function Home() {
+const StarsCanvas = dynamic(() => import("./components/StarsCanvas"), {
+  ssr: false,
+});
+
+
+export default function ClientHome() {
   return (
     <main className="flex min-h-screen flex-col bg-[#121212] relative" style={{ height: "100vh" }}>
       <Navbar />
@@ -26,4 +33,3 @@ export default function Home() {
     </main>
   );
 }
-
