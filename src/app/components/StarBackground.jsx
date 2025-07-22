@@ -1,22 +1,19 @@
+// StarBackground.jsx
+
 "use client";
 
-import React, { useRef, useMemo } from "react";
+import React, { useState, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
-import * as THREE from "three";
-import { inSphere } from "maath/random";
+import * as random from "maath/random/dist/maath-random.esm";
 
-const StarBackground = () => {
+const StarBackground = (props) => {
   const ref = useRef();
+  const [sphere] = useState(() =>
+    random.inSphere(new Float32Array(5000), { radius: 1.2 })
+  );
 
-  const stars = useMemo(() => {
-    const positions = inSphere(new Float32Array(5000 * 3), { radius: 1.2 });
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    return geometry;
-  }, []);
-
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
     if (ref.current) {
       ref.current.rotation.x -= delta / 10;
       ref.current.rotation.y -= delta / 15;
@@ -25,12 +22,12 @@ const StarBackground = () => {
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} geometry={stars} frustumCulled>
+      <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
           color="#fff"
           size={0.002}
-          sizeAttenuation
+          sizeAttenuation={true}
           depthWrite={false}
         />
       </Points>
