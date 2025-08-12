@@ -1,6 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
+import AdBanner from './components/AdBanner'; // ✅ Thêm dòng này
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -34,7 +35,10 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={inter.className}>{children}</body>
+<body className={`${inter.className} pt-[60px] md:pt-[80px]`}>
+        <AdBanner /> {/* ✅ Gắn banner trên cùng */}
+        {children}
+      </body>
     </html>
   );
 }

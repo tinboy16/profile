@@ -1,3 +1,4 @@
+
 // StarBackground.jsx
 
 "use client";
