@@ -26,15 +26,28 @@ const TAB_DATA = [
       </ul>
     ),
   },
-  {
-    title: "Certifications",
-    id: "certifications",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>Blockchain anyone</li>
-      </ul>
-    ),
-  },
+{
+  title: "Certifications",
+  id: "certifications",
+  content: (
+    <ul className="list-disc pl-2 space-y-1">
+      <li>
+        Blockchain anyone
+      </li>
+      <li>
+        Interfacing with the Arduino{" "}
+        <a
+          href="https://coursera.org/verify/Q799NZM83NPT"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:underline dark:text-blue-400"
+        >
+          (View Certificate ↗)
+        </a>
+      </li>
+    </ul>
+  ),
+},
 ];
 
 const AboutSection = () => {

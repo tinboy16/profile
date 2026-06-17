@@ -1,21 +1,23 @@
 export default function AdBanner() {
   return (
-    <div className="flex fixed top-0 left-0 w-full z-50 bg-[#111827] text-white text-center py-2 shadow-md items-center justify-center gap-2 md:gap-4 px-2">
+    <div className="fixed top-0 left-0 z-50 flex w-full items-center justify-center gap-2 bg-[#111827] px-2 py-2 text-center text-white shadow-md md:gap-4">
       {/* Mobile text */}
-      <span className="block md:hidden text-sm">
-        🚀 Stake INT – Earn rewards!
+      <span className="block text-sm md:hidden">
+        📖 Visit our Docs
       </span>
+
       {/* Desktop text */}
       <span className="hidden md:block">
-        🚀 Stake INT with validator tinboy – Earn rewards, stay ahead!
+        📖 Everything you need to get started is in our documentation.
       </span>
+
       <a
-        href="https://stake.devnet.inference.net/operator/68mqSkyfjVCQ5zjxBCLqWuAkxUJR2bjtn9K8CT8kJdvD/overview"
+        href="https://docs.tinnguyen.xyz/"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-white text-black px-3 py-1 rounded hover:bg-gray-300 transition text-sm md:text-base"
+        className="rounded bg-white px-4 py-1.5 text-sm font-medium text-black transition hover:bg-gray-200 md:text-base"
       >
-        Stake Now
+        Explore Docs
       </a>
     </div>
   );
