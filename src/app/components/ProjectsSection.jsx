@@ -16,12 +16,12 @@ const projectsData = [
   },
   {
     id: 2,
-    title: "My Portfolio Website",
+    title: "Tuyen truyen Phong Chong ma tuy",
     description: "HTML, CSS, JS",
-    image: "/images/projects/2.jpg",
+    image: "/images/projects/7.jpg",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/tinboy16/html",
-    previewUrl: "https://tinnguyen.ddns.net",
+    previewUrl: "https://tuyentruyenpcmt.tinnguyen.xyz",
   },
   {
     id: 3,
